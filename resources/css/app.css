@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Comfortaa', cursive;
+    }
+}
+
+@layer components {
+    .maxNavigationHeight {
+        max-height: calc(100vh - 8rem);
+    }
+
+    .heading_list ul h2 {
+        @apply cursor-pointer hover:translate-x-1.5  ease-in-out duration-300
+    }
+
+    .heading_list ul ul {
+        max-height: 0;
+        overflow: hidden;
+        padding-left: 1.25rem;
+        /*transition:max-height 1.45s ease;*/
+    }
+
+    .heading_list ul .sub--on ul {
+        max-height: none;
+    }
+
+    .heading_list .active a:before {
+        background: url(/img/active_marker.svg) no-repeat 50%;
+
+        content: "";
+        height: 1.3rem;
+        left: -1rem;
+        position: absolute;
+        top: .25em;
+        width: .5rem;
+    }
+}
